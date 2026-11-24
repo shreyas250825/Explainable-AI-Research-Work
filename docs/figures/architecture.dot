@@ -1,0 +1,15 @@
+digraph DNN {
+  graph [rankdir=LR, bgcolor=white, pad="0.16", nodesep="0.27", ranksep="0.29", splines=polyline];
+  node [shape=box, style="rounded,filled", color="#222222", fillcolor=white, penwidth=1.15, fontname="Helvetica", fontsize=12, margin="0.15,0.08"];
+  edge [arrowsize=0.65, color="#555555"];
+  n0 [label="24 input\nfeatures"];
+  n1 [label="Dense 512\nReLU"];
+  n2 [label="BN +\nDropout 0.30", fillcolor="#f1f1f1"];
+  n3 [label="Dense 256\nReLU"];
+  n4 [label="BN +\nDropout 0.30", fillcolor="#f1f1f1"];
+  n5 [label="Dense 128\nReLU"];
+  n6 [label="BN +\nDropout 0.20", fillcolor="#f1f1f1"];
+  n7 [label="Dense 64\nReLU"];
+  n8 [label="3-class\nSoftmax", fillcolor="#e5e5e5"];
+  n0 -> n1 -> n2 -> n3 -> n4 -> n5 -> n6 -> n7 -> n8;
+}

@@ -1,0 +1,16 @@
+digraph WirelessXAI {
+    graph [rankdir=LR, bgcolor=white, pad="0.15", nodesep="0.28", ranksep="0.35", splines=ortho, fontname="Helvetica"];
+    node [shape=box, style="rounded,filled", fillcolor=white, color="#282828", penwidth=1.1, fontname="Helvetica", fontsize=11, margin="0.13,0.09"];
+    edge [color="#444444", arrowsize=0.60, penwidth=1.05];
+    rf [label="Raw RF / IQ\nrecordings"];
+    seg [label="Chunk IQ stream\n2,048 int16 values"];
+    feat [label="24 numerical\nfeatures"];
+    split [label="Train / validation / test\nrecording-aware if possible"];
+    norm [label="Train-only\nstandardization"];
+    dnn [label="DNN\n512 – 256 – 128 – 64"];
+    pred [label="Wi-Fi / LTE / 5G-NR", shape=box, style="filled", fillcolor="#eeeeee", penwidth=1.3];
+    shap [label="SHAP\nfeature attributions", style="rounded,dashed,filled", fillcolor="#f6f6f6"];
+    rf -> seg -> feat -> split -> norm -> dnn -> pred;
+    {rank=same; pred; shap;}
+    dnn -> shap [style=dashed, constraint=true];
+}

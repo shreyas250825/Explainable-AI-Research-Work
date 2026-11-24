@@ -1,0 +1,5 @@
+-r requirements.txt
+# Optional: only needed for model construction/training and SHAP analysis.
+# Installation can be platform/Python-version sensitive. Python 3.10–3.12 recommended.
+tensorflow>=2.15,<3
+shap>=0.44,<1

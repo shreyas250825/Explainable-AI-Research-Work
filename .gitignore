@@ -1,0 +1,25 @@
+# Research recordings, derived data and trained weights
+*.data
+*.h5
+*.keras
+*.npy
+*.npz
+*.pkl
+*.joblib
+/data/*
+!/data/README.md
+/results/
+/recordings/
+/raw/
+/Wireless/
+*.csv
+# Jupyter and Python artifacts
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
